@@ -1,5 +1,9 @@
 import { createApp } from 'vue'
-import './style.css'
+//import type { ComponentPublicInstance } from 'vue'
+import { router, /*routerHistory*/ } from './router'
 import App from './App.vue'
+//import style from './style.css'
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.mount("#app");

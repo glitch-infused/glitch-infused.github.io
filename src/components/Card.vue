@@ -14,7 +14,7 @@ export default {
 <template>
     <div class="card" :class=color>
         <div class="card-innerbox">
-            <img class="card-img" :src="image" alt="">
+            <div class="card-img-container"><img class="card-img" :src="image" alt=""></div>
             <div class="card-textbox">
                 <div class="card-title">{{ title }}</div>
                 <div class="card-subtitle">{{ subtitle }}</div>
@@ -74,15 +74,21 @@ export default {
 }
 
 .card-img {
-    position: absolute;
-    height: 400px;
-    width: min-content;
-    top: 0;
-    left: 0;
     transition: transform 0.2s ease;
+    position: relative;
 }
 
-.card:nth-child(2n) .card-img {
+
+.card-img-container {
+    position: absolute;
+    height: 400px;
+    top: 0;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+.card:nth-child(2n) .card-img-container {
     left: initial;
     right: 0;
 }
@@ -120,7 +126,7 @@ export default {
     top: -30%;
     left: -55px;
     height: 160%;
-    width: 120%;
+    width: 30%;
     transform: rotate(8deg);
 }
 

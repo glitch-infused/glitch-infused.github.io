@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Card from './Card.vue'
 import imgurl from '../assets/img.avif'
-import style from '../style.css?inline'
+import style from '../style.css'
 
 var cards = [
   {

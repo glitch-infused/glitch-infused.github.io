@@ -124,6 +124,7 @@ setInterval(update, 200);
 </template>
 <style scoped>
 .bar {
+    z-index: 10;
     width: 80px;
     position: fixed;
     top: 32px;

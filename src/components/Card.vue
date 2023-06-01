@@ -107,7 +107,7 @@ export default {
     top: 7%;
     bottom: 7%;
     left: 430px;
-    width: calc(100% - 470px);
+    width: calc(100% - 500px);
     font-size: 17px;
 }
 
@@ -121,7 +121,6 @@ export default {
     content: "";
     position: absolute;
     display: block;
-    background: #ff0000bb;
     background: #fff;
     top: -30%;
     left: -55px;
@@ -146,6 +145,7 @@ export default {
 
 .card-textbox * {
     position: relative;
+    z-index: 1;
 }
 
 .card-title {
@@ -253,11 +253,10 @@ export default {
 }
 
 .card-description {
-    z-index: 10;
     font-size: 15px;
     color: #424242;
-    height: 180px;
     overflow: hidden;
+    width: 400px;
 }
 
 .card-tagbox {

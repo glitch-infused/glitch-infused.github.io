@@ -9,9 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "chart.js": "^4.3.0",
     "jquery": "^3.7.0",
     "sass": "^1.62.1",
     "vue": "^3.2.47",
+    "vue-chartjs": "^5.2.0",
     "vue-router": "4",
     "webpack": "^5.85.0"
   },

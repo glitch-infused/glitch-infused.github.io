@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Card from './Card.vue'
 import imgurl from '../assets/img.avif'
-import style from '../style.css'
 
 var cards = [
   {
@@ -36,7 +35,7 @@ var cards = [
   {
     "title": "Version and team management",
     "subtitle": "Git, Gitlab and Github",
-    "description": "I am an active user of git and github. One of the first things I do after coming up with an idea for a new project is creating a new git repository. Even when I am not working with other people I find useing git very helpful to keep track of what changes I made to be able to recover incorrectly 'fixed' code. Version control also allows me to take notes on what I have done. On top of using git I believe documentation is one of the most important things in programming and in my opinion at least comments should be used not to explain how the code does something, but what it does and most importantly why!",
+    "description": "I am an active user of git and github. One of the first things I do after coming up with an idea for a new project is creating a new git repository. Even when I am not working with other people I find useing git very helpful to keep track of what changes I made to be able to recover incorrectly 'fixed' code.",//" Version control also allows me to take notes on what I have done. On top of using git I believe documentation is one of the most important things in programming and in my opinion at least comments should be used not to explain how the code does something, but what it does and most importantly why!",
     "tags": [
       "Git", "GitLab", "GitHub", "Documentation"
     ]
@@ -56,7 +55,6 @@ function getColor(i = 0) {
 
 <template>
     <link rel="preload" :href="imgurl">
-    <link rel="stylesheet" :href="style">
     <h1>Glitch_infused</h1>
     <div class="cards-holder">
         <Card v-for="i in range" :title=cards[i].title :subtitle=cards[i].subtitle :description=cards[i].description :color=getColor(i) :image="imgurl" :tags=cards[i].tags></Card>

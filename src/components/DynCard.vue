@@ -6,8 +6,8 @@ export default {
         "subtitle": String,
         "description": String,
         "color": String,
-        "img": String,
-        "tags": Array
+        "image": String,
+        "tags": Array,
     }
 }
 
@@ -16,7 +16,7 @@ export default {
     <div :class="`card ` + color">
         <div class="card-innerbox">
             <div class="card-image-wrapper">
-                <img class="card-image" :src="img">
+                <img class="card-image" :src="image">
             </div>
             <div class="card-text-wrapper">
                 <div class="card-title">{{ title }}</div>
@@ -44,6 +44,13 @@ export default {
     max-width: 750px;
     aspect-ratio: 2 / 1;
     margin-bottom: 40px;
+}
+.card-innerbox {
+    position: relative;
+    width: 75vw;
+    max-width: 750px;
+    aspect-ratio: 2 / 1;
+    margin-bottom: 40px;
     border-radius: 10px;
     background-color: #fff;
     border: 2px solid #ddd;
@@ -56,17 +63,9 @@ export default {
     transition: box-shadow var(--animation-time) ease, transform var(--animation-time) ease;
 }
 
-.card:hover {
+.card:hover .card-innerbox {
     box-shadow: 0 34px 32px -33px rgba(0, 0, 0, .18);
     transform: translate(0px, -12px);
-}
-
-.card-innerbox {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 }
 
 .card-image-wrapper {
@@ -128,8 +127,19 @@ export default {
 }
 
 .card:hover .card-bar {
-    left: 3px;
-    width: 95%;
+    left: -4px;
+    width: calc(100% + 8px);
+}
+
+.card-description {
+    display: -webkit-box;
+    position: relative;
+    min-height: 6lh;
+    /*max-height: 7lh;*/
+    overflow: hidden;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .card-tag-wrapper {
@@ -139,12 +149,12 @@ export default {
 }
 
 .card-tag {
+    font-size: 12px;
     display: inline-block;
-    background-color: #424242;
-    color: #fff;
+    background-color: rgba(0, 0, 0, .18);
     border-radius: 8px;
     padding: 1px 6px 1px 16px;
-    margin-right: 20px;
+    margin-right: 8px;
     vertical-align: middle;
     text-align: center;
     width: max-content;
@@ -160,4 +170,59 @@ export default {
     width: 6px;
     background-color: aqua;
 }
+
+
+/* colors yay */
+.card.blue .card-bar {
+    background-color: #0088FF;
+}
+.card.blue .card-tag {
+    background-color: #0088FF50;
+}
+.card.blue .card-tag::before {
+    background-color: #0088FF;
+}
+.card.red .card-bar {
+    background-color: #D62F1F;
+}
+.card.red .card-tag {
+    background-color: #D62F1F50;
+}
+.card.red .card-tag::before {
+    background-color: #D62F1F;
+}
+.card.green .card-bar {
+    background-color: #40BD00;
+}
+.card.green .card-tag {
+    background-color: #40BD0050;
+}
+.card.green .card-tag::before {
+    background-color: #40BD00;
+}
+.card.yellow .card-bar {
+    background-color: #F5AF41;
+}
+.card.yellow .card-tag {
+    background-color: #F5AF4150;
+}
+.card.yellow .card-tag::before {
+    background-color: #F5AF41;
+}
+.card.orange .card-bar {
+    background-color: #FF5722;
+}
+.card.orange .card-tag {
+    background-color: #FF572250;
+}
+.card.orange .card-tag::before {
+    background-color: #FF5722;
+}
+.card.grey .card-bar {
+    background-color: #424242;
+}
+.card.gray .card-bar {
+    background-color: #424242;
+}
+
 </style>

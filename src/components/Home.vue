@@ -2,6 +2,15 @@
 import imgurl from '../assets/img.avif'
 import DynCard from './DynCard.vue';
 
+
+function randRange(min: number, max: number) {
+    return Math.random() * (max - min) + min;
+}
+
+function randInt(min: number, max: number) {
+    return Math.floor(randRange(min, max));
+}
+
 var cards = [
   {
     "title": "Basic Web development experience",
@@ -74,7 +83,7 @@ function getColor(i = 0) {
     <link rel="preload" :href="imgurl">
     <h1>Glitch_infused</h1>
     <div class="cards-holder">
-        <DynCard v-for="i in range" :title=cards[i].title :subtitle=cards[i].subtitle :description=cards[i].description :color=getColor(i) :image="imgurl" :tags=cards[i].tags></DynCard>
+        <DynCard v-for="i in range" :title=cards[i].title :subtitle=cards[i].subtitle :description=cards[i].description :color="randInt(0, 5)" :image="imgurl" :tags=cards[i].tags></DynCard>
     </div>
 </template>
 

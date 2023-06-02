@@ -71,19 +71,13 @@ var range = [...Array(cards.length).keys()];
 
 var colors = ["blue", "red", "green", "yellow", "orange"];
 
-function getColor(i = 0) {
-  while (i >= colors.length) {i -= colors.length}
-  console.log(i);
-  return colors[i];
-}
-
 </script>
 
 <template>
     <link rel="preload" :href="imgurl">
     <h1>Glitch_infused</h1>
     <div class="cards-holder">
-        <DynCard v-for="i in range" :title=cards[i].title :subtitle=cards[i].subtitle :description=cards[i].description :color="randInt(0, 5)" :image="imgurl" :tags=cards[i].tags></DynCard>
+        <DynCard v-for="i in range" :title=cards[i].title :subtitle=cards[i].subtitle :description=cards[i].description :color="colors[randInt(0, 5)]" :image="imgurl" :tags=cards[i].tags></DynCard>
     </div>
 </template>
 

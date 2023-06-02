@@ -67,6 +67,19 @@ var cards = [
   }
 ]
 
+var prev = [-1, -1];
+function FakeRandom(min: number, max: number)
+{
+  var r = randInt(min, max);
+  while (prev.at(0) == r || prev.at(1) == r) {
+    r = randInt(min, max);
+  }
+  console.log(prev);
+  console.log(r);
+  prev.shift();
+  prev.push(r);
+  return r;
+}
 var range = [...Array(cards.length).keys()];
 
 var colors = ["blue", "red", "green", "yellow", "orange"];
@@ -77,7 +90,7 @@ var colors = ["blue", "red", "green", "yellow", "orange"];
     <link rel="preload" :href="imgurl">
     <h1>Glitch_infused</h1>
     <div class="cards-holder">
-        <DynCard v-for="i in range" :title=cards[i].title :subtitle=cards[i].subtitle :description=cards[i].description :color="colors[randInt(0, 5)]" :image="imgurl" :tags=cards[i].tags></DynCard>
+        <DynCard v-for="i in range" :title=cards[i].title :subtitle=cards[i].subtitle :description=cards[i].description :color="colors[FakeRandom(0, 5)]" :image="imgurl" :tags=cards[i].tags></DynCard>
     </div>
 </template>
 

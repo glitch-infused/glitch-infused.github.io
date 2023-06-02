@@ -70,6 +70,7 @@ export default {
 
 .card-image-wrapper {
     width: 25vw;
+    height: 100%;
     max-width: 250px;
     aspect-ratio: auto;
     overflow: hidden;
@@ -182,6 +183,9 @@ export default {
 .card.blue .card-tag::before {
     background-color: #0088FF;
 }
+.card.blue .card-image-wrapper {
+    background-color: #0088FF50;
+}
 .card.red .card-bar {
     background-color: #D62F1F;
 }
@@ -190,6 +194,9 @@ export default {
 }
 .card.red .card-tag::before {
     background-color: #D62F1F;
+}
+.card.red .card-image-wrapper {
+    background-color: #D62F1F50;
 }
 .card.green .card-bar {
     background-color: #40BD00;
@@ -200,6 +207,9 @@ export default {
 .card.green .card-tag::before {
     background-color: #40BD00;
 }
+.card.green .card-image-wrapper {
+    background-color: #40BD0050;
+}
 .card.yellow .card-bar {
     background-color: #F5AF41;
 }
@@ -208,6 +218,9 @@ export default {
 }
 .card.yellow .card-tag::before {
     background-color: #F5AF41;
+}
+.card.yellow .card-image-wrapper {
+    background-color: #F5AF4150;
 }
 .card.orange .card-bar {
     background-color: #FF5722;
@@ -218,11 +231,17 @@ export default {
 .card.orange .card-tag::before {
     background-color: #FF5722;
 }
+.card.orange .card-image-wrapper {
+    background-color: #FF572250;
+}
 .card.grey .card-bar {
     background-color: #424242;
 }
 .card.gray .card-bar {
     background-color: #424242;
+}
+.card.grey .card-image-wrapper {
+    background-color: #0088FF50;
 }
 
 </style>

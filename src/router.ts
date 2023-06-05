@@ -1,9 +1,9 @@
-import { createRouter, createWebHashHistory, /*RouterView*/ } from 'vue-router'
+import { createRouter, createWebHistory, /*RouterView*/ } from 'vue-router'
 import home from './components/Home.vue'
 import stats from './components/Stats.vue'
 import test from './components/Test.vue'
 
-export const routerHistory = createWebHashHistory();
+export const routerHistory = createWebHistory();
 export const router = createRouter({
     history: routerHistory,
     strict: true,
